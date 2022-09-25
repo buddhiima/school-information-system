@@ -27,4 +27,15 @@ public class StudentController {
         return new ResponseEntity<>(students, HttpStatus.OK);
     }
 
+    @PutMapping(path = "")
+    public String UpdateStudent(@RequestBody Student student)
+    {
+        try {
+            studentService.updateStudent(student);
+            return "succefull";
+        }
+        catch (Exception e){
+            return "Error";
+        }
+    }
 }
