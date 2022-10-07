@@ -1,5 +1,5 @@
 package springfield.academy.schoolinformationsystem.controller;
-
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -26,5 +26,14 @@ public class StudentController {
         List<Student> students = studentService.getAllStudents();
         return new ResponseEntity<>(students, HttpStatus.OK);
     }
+
+    //Save Student data into database
+
+    @PostMapping("/add")
+    public String  add(@RequestBody Student student){
+        studentService.saveStudent(student);
+        return "New Student is added";
+    }
+
 
 }

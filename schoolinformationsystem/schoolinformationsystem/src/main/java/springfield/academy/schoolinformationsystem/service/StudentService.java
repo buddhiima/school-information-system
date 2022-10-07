@@ -10,6 +10,7 @@ import java.util.List;
 @Service
 public class StudentService {
 
+
     private final StudentRepository studentRepository;
 
     // constructor
@@ -22,5 +23,14 @@ public class StudentService {
     public List<Student> getAllStudents() {
         return studentRepository.findAll();
     }
+
+    //Save student details
+
+
+    public Student saveStudent(Student student){
+        return studentRepository.save(student);
+    }
+
+
 }
 
