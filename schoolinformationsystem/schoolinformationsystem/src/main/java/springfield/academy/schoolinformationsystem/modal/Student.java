@@ -14,7 +14,6 @@ public class Student implements Serializable {
     private String address;
     private String contact;
 
-
     // default constructor
     public Student() {
     }
