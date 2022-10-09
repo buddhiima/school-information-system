@@ -14,13 +14,14 @@ public class StudentService {
 
     // constructor
     @Autowired
-    public StudentService(StudentRepository studentRepository) {
-        this.studentRepository = studentRepository;
-    }
+    public StudentService(StudentRepository studentRepository) {this.studentRepository = studentRepository;}
 
     // get all students
     public List<Student> getAllStudents() {
         return studentRepository.findAll();
     }
+
+    // delete a student record
+    public void deleteStudent(int indexNo) { studentRepository.deleteById(indexNo); }
 }
 
