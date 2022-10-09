@@ -27,4 +27,9 @@ public class StudentController {
         return new ResponseEntity<>(students, HttpStatus.OK);
     }
 
+    // delete a student record
+    @DeleteMapping(("/delete/{indexNo}"))
+    public void deleteStudent(@PathVariable int indexNo) {
+        studentService.deleteStudent(indexNo);
+    }
 }
