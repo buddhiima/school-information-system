@@ -27,7 +27,7 @@ public class StudentController {
         return new ResponseEntity<>(students, HttpStatus.OK);
     }
 
-    @PutMapping(path = "")
+    @PutMapping("")
     public String UpdateStudent(@RequestBody Student student)
     {
         try {
